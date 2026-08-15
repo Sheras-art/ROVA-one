@@ -1,0 +1,359 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-header);
+
+  width: 100%;
+
+  border-bottom: 1px solid transparent;
+
+  background: rgba(8, 10, 13, 0.72);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+  width: min(
+    calc(100% - (var(--page-padding) * 2)),
+    var(--container-wide)
+  );
+
+  min-height: 76px;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+
+  flex-shrink: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.02em;
+
+  transition: opacity var(--transition-fast);
+}
+
+.brand:hover {
+  opacity: 0.8;
+}
+
+.brandName {
+  color: var(--color-text-primary);
+}
+
+.brandModel {
+  color: var(--color-accent);
+
+  font-size: 0.7em;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.navLink {
+  position: relative;
+
+  padding: var(--space-2) 0;
+
+  background: transparent;
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+
+  transition:
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.navLink::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--color-accent);
+
+  transform: translateX(-50%);
+
+  transition: width var(--transition-normal);
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   DESKTOP CTA
+======================================== */
+
+.desktopCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  min-height: 42px;
+  padding: 0.65rem 1.15rem;
+
+  flex-shrink: 0;
+
+  border-radius: var(--radius-pill);
+
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.desktopCta:hover {
+  background: var(--color-accent-hover);
+  box-shadow: var(--glow-accent);
+
+  transform: translateY(-2px);
+}
+
+.desktopCta:active {
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   MOBILE MENU TOGGLE
+======================================== */
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--color-text-primary);
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.menuToggle:hover {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobileMenu {
+  display: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .navList {
+    gap: 1.25rem;
+  }
+
+  .navLink {
+    font-size: 0.8125rem;
+  }
+
+  .desktopCta {
+    padding-inline: 1rem;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 68px;
+  }
+
+  .desktopCta {
+    display: none;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .mobileMenu {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    overflow: hidden;
+
+    border-top: 1px solid transparent;
+
+    background: rgba(8, 10, 13, 0.96);
+
+    transition:
+      grid-template-rows var(--transition-slow),
+      border-color var(--transition-normal);
+  }
+
+  .mobileMenu > nav {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .mobileMenuOpen {
+    grid-template-rows: 1fr;
+
+    border-color: var(--color-border);
+  }
+
+  .mobileNavList {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-6) var(--page-padding) var(--space-4);
+  }
+
+  .mobileNavList li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobileNavLink {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: var(--space-4) 0;
+
+    background: transparent;
+    color: var(--color-text-secondary);
+
+    text-align: left;
+
+    font-size: var(--text-body-sm);
+    font-weight: var(--weight-medium);
+
+    transition: color var(--transition-fast);
+  }
+
+  .mobileNavLink:hover {
+    color: var(--color-accent);
+  }
+
+  .mobileCta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    width: calc(100% - (var(--page-padding) * 2));
+    min-height: 48px;
+
+    margin: var(--space-4) auto var(--space-8);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--color-accent);
+    color: var(--color-text-dark);
+
+    font-size: var(--text-body-sm);
+    font-weight: var(--weight-semibold);
+
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .mobileCta:hover {
+    background: var(--color-accent-hover);
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .container {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .menuToggle {
+    width: 40px;
+    height: 40px;
+  }
+}
