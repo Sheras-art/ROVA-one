@@ -11,8 +11,10 @@
 ───────────────────────────────────────── */
 
 .visual {
+  margin-top: 4rem;
   position: absolute;
-  inset: 0;
+  height: 100dvh;
+  width: 100%;
   z-index: -2;
 
   background: url("../../assets/images/rova-one-hero-img.png")
@@ -65,9 +67,9 @@
   max-width: 680px;
 
   font-family: var(--font-display);
-  font-size: clamp(4rem, 6.5vw, 6.5rem);
-  font-weight: 700;
-  line-height: 0.86;
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.9;
   letter-spacing: -0.045em;
   text-transform: uppercase;
 
