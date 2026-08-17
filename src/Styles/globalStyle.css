@@ -112,7 +112,7 @@
 
   --page-padding: clamp(1.25rem, 4vw, 4rem);
 
-  --section-padding-y: clamp(5rem, 10vw, 10rem);
+  --section-padding-y: clamp(5rem, 8vw, 8rem);
 
   --content-narrow: 680px;
   --content-medium: 900px;

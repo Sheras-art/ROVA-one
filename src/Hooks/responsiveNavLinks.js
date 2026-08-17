@@ -28,7 +28,7 @@ const useResponsiveNavLinks = () => {
             return link.priority <= 3;
         }
 
-        if (windowWidth >= 450) {
+        if (windowWidth >= 480) {
             return link.priority <= 2;
         }
 

@@ -1,0 +1,472 @@
+/* ========================================
+   ROVA ONE — TECHNOLOGY
+======================================== */
+
+.technology {
+  position: relative;
+  overflow: hidden;
+
+  padding-block: var(--section-padding-y);
+
+  background:
+    radial-gradient(
+      circle at 50% 58%,
+      rgba(183, 255, 60, 0.055),
+      transparent 32%
+    ),
+    var(--color-bg);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: var(--space-16);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  width: min(100%, var(--content-medium));
+
+  text-align: center;
+}
+
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--space-5);
+
+  color: var(--color-accent);
+
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+
+.title {
+  color: var(--color-text-primary);
+
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+
+
+.title span {
+  display: block;
+
+  color: var(--color-accent);
+}
+
+
+.description {
+  width: min(100%, var(--content-narrow));
+
+  margin: var(--space-6) auto 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ========================================
+   PRODUCT STAGE
+======================================== */
+
+.product {
+  position: relative;
+
+  width: min(100%, 1100px);
+  min-height: 720px;
+
+  display: grid;
+  place-items: center;
+}
+
+
+/* ========================================
+   ATMOSPHERIC GLOW
+======================================== */
+
+.productGlow {
+  position: absolute;
+  inset: 50% auto auto 50%;
+
+  width: min(70vw, 650px);
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(183, 255, 60, 0.16) 0%,
+      rgba(183, 255, 60, 0.07) 28%,
+      rgba(183, 255, 60, 0.02) 48%,
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   WATCH
+======================================== */
+
+.watch {
+  position: relative;
+  z-index: var(--z-base);
+
+  width: min(54%, 560px);
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 30px 45px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 35px rgba(183, 255, 60, 0.08));
+
+  user-select: none;
+}
+
+
+/* ========================================
+   CALLOUTS
+======================================== */
+
+.callouts {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.callout {
+  position: absolute;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  width: min(300px, 28%);
+
+  padding: var(--space-5);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+
+  background: rgba(16, 20, 25, 0.58);
+
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  pointer-events: auto;
+
+  transition:
+    border-color var(--transition-normal),
+    background-color var(--transition-normal),
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.callout:hover {
+  border-color: rgba(183, 255, 60, 0.28);
+
+  background: rgba(20, 26, 25, 0.72);
+
+  box-shadow:
+    var(--shadow-lg),
+    var(--glow-accent);
+}
+
+
+/* ========================================
+   CALLOUT POSITIONS
+======================================== */
+
+.gps {
+  top: 14%;
+  left: 4%;
+}
+
+
+.sensor {
+  top: 42%;
+  right: 5%;
+}
+
+
+.power {
+  bottom: 16%;
+  left: 8%;
+}
+
+
+/* ========================================
+   CALLOUT ICON
+======================================== */
+
+.calloutIcon {
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(183, 255, 60, 0.2);
+  border-radius: var(--radius-md);
+
+  background: rgba(183, 255, 60, 0.07);
+
+  color: var(--color-accent);
+}
+
+
+/* ========================================
+   CALLOUT CONTENT
+======================================== */
+
+.calloutContent {
+  min-width: 0;
+}
+
+
+.calloutLabel {
+  display: block;
+
+  margin-bottom: var(--space-2);
+
+  color: var(--color-accent);
+
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+
+.calloutTitle {
+  color: var(--color-text-primary);
+
+  font-size: var(--text-body-md);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+
+.calloutDescription {
+  margin-top: var(--space-2);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-caption);
+  line-height: var(--leading-normal);
+}
+
+
+/* ========================================
+   CONNECTOR
+======================================== */
+
+.connector {
+  position: absolute;
+
+  width: 70px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(183, 255, 60, 0.65),
+      rgba(183, 255, 60, 0)
+    );
+}
+
+
+/* GPS — connector exits right */
+.gps .connector {
+  top: 50%;
+  right: -70px;
+}
+
+
+/* Sensor — connector exits left */
+.sensor .connector {
+  top: 50%;
+  left: -70px;
+
+  transform: rotate(180deg);
+}
+
+
+/* Power — connector exits right */
+.power .connector {
+  top: 50%;
+  right: -70px;
+}
+
+
+/* Connector endpoint */
+.connector::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: 6px;
+  height: 6px;
+
+  transform: translateY(-50%);
+
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+
+  background: var(--color-bg);
+
+  box-shadow: var(--glow-accent);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1023px) {
+  .product {
+    min-height: 650px;
+  }
+
+  .watch {
+    width: min(52%, 480px);
+  }
+
+  .callout {
+    width: min(280px, 31%);
+  }
+
+  .gps {
+    left: 0;
+  }
+
+  .sensor {
+    right: 0;
+  }
+
+  .power {
+    left: 2%;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .container {
+    gap: var(--space-12);
+  }
+
+  .description {
+    font-size: var(--text-body-md);
+  }
+
+  .product {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+    padding-top: var(--space-8);
+  }
+
+  .productGlow {
+    width: 100vw;
+  }
+
+  .watch {
+    width: min(82%, 400px);
+  }
+
+  .callouts {
+    position: static;
+
+    width: 100%;
+
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .callout,
+  .gps,
+  .sensor,
+  .power {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .callout:hover {
+    transform: none;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .watch {
+    width: 92%;
+  }
+
+  .callout {
+    padding: var(--space-4);
+  }
+
+  .calloutIcon {
+    width: 38px;
+    height: 38px;
+  }
+}

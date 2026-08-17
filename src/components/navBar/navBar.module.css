@@ -52,7 +52,7 @@
 
   color: var(--color-text-primary);
 
-  font-size: 1.1rem;
+  font-size: var(--text-heading-md);
   font-weight: var(--weight-bold);
   letter-spacing: -0.02em;
 
@@ -70,8 +70,8 @@
 .brandModel {
   color: var(--color-accent);
 
-  font-size: 0.7em;
-  font-weight: var(--weight-semibold);
+  font-size: calc(var(--text-heading-md) - 50%);
+  font-weight: var(--weight-medium);
   letter-spacing: 0.04em;
 }
 
@@ -151,7 +151,7 @@
 
   flex-shrink: 0;
 
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
 
   background: var(--color-accent);
   color: var(--color-text-dark);
@@ -218,13 +218,19 @@
    TABLET
 ======================================== */
 
-@media (max-width: 900px) {
-  .navList {
-    gap: 1.25rem;
+@media (min-width: 900px){
+  .navList{
+    gap: 3rem;
   }
 
-  .navLink {
-    font-size: 0.8125rem;
+  .navLink{
+    font-size: 1.08rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .navList {
+    gap: 2.5rem;
   }
 
   .desktopCta {
@@ -320,7 +326,7 @@
 
     margin: var(--space-4) auto var(--space-8);
 
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius-md);
 
     background: var(--color-accent);
     color: var(--color-text-dark);
@@ -349,7 +355,15 @@
   }
 
   .brand {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .navList{
+    gap: 1.5rem;
+  }
+
+  .navLink{
+    font-size: 0.8rem;
   }
 
   .menuToggle {

@@ -1,0 +1,342 @@
+/* ========================================
+   ROVA ONE — REVIEWS
+======================================== */
+
+.reviews {
+  position: relative;
+  overflow: hidden;
+
+  padding-block: var(--section-padding-y);
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(183, 255, 60, 0.025),
+      transparent 38%
+    ),
+    var(--color-bg);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: var(--space-16);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  width: min(100%, var(--content-medium));
+
+  text-align: center;
+}
+
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--space-5);
+
+  color: var(--color-accent);
+
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+
+.title {
+  color: var(--color-text-primary);
+
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+
+
+.title span {
+  display: block;
+
+  color: var(--color-accent);
+}
+
+
+.description {
+  width: min(100%, var(--content-narrow));
+
+  margin: var(--space-6) auto 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ========================================
+   REVIEW GRID
+======================================== */
+
+.reviewGrid {
+  width: min(100%, 1160px);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+
+/* ========================================
+   REVIEW CARD
+======================================== */
+
+.review {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-8);
+
+  border: var(--border-thin);
+  border-radius: var(--radius-xl);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(16, 20, 25, 0.62);
+
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.review:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(183, 255, 60, 0.2);
+
+  box-shadow:
+    var(--shadow-lg),
+    var(--glow-accent);
+}
+
+
+/* ========================================
+   QUOTE ICON
+======================================== */
+
+.quoteIcon {
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(183, 255, 60, 0.16);
+  border-radius: var(--radius-md);
+
+  background: rgba(183, 255, 60, 0.06);
+
+  color: var(--color-accent);
+}
+
+
+/* ========================================
+   RATING
+======================================== */
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+
+  margin-top: var(--space-8);
+
+  color: var(--color-accent);
+}
+
+
+/* ========================================
+   TESTIMONIAL
+======================================== */
+
+.quote {
+  max-width: 34ch;
+
+  margin-top: var(--space-5);
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+}
+
+
+/* ========================================
+   AUTHOR
+======================================== */
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  margin-top: auto;
+  padding-top: var(--space-8);
+}
+
+
+.avatar {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background: var(--color-surface);
+
+  color: var(--color-accent);
+
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+}
+
+
+.author strong {
+  display: block;
+
+  color: var(--color-text-primary);
+
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+}
+
+
+.author span {
+  display: block;
+
+  margin-top: var(--space-1);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-caption);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1023px) {
+  .reviewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .review:last-child {
+    grid-column: 1 / -1;
+
+    width: calc(50% - (var(--space-5) / 2));
+    margin-inline: auto;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .container {
+    gap: var(--space-12);
+  }
+
+  .description {
+    font-size: var(--text-body-md);
+  }
+
+  .reviewGrid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .review {
+    min-height: 340px;
+
+    padding: var(--space-6);
+  }
+
+  .review:last-child {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+  .quote {
+    max-width: 38ch;
+
+    font-size: 1.2rem;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .review {
+    min-height: 320px;
+
+    padding: var(--space-5);
+  }
+
+  .rating {
+    margin-top: var(--space-6);
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .author {
+    padding-top: var(--space-6);
+  }
+}
