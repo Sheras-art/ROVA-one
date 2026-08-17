@@ -11,9 +11,7 @@ function Navbar() {
 
   const {navLinks, sideBarLinks, windowWidth} = useResponsiveNavLinks();  
 
-  const handleNavigation = (href) => {
-    console.log(href);
-    
+  const handleNavigation = (href) => {    
     setIsMenuOpen(false);
 
     const target = document.querySelector(href);
@@ -36,7 +34,7 @@ function Navbar() {
       <div className={styles.container}>
         {/* Brand */}
         <a
-          href="/"
+        href="/ROVA-one/"
           className={styles.brand}
           aria-label="ROVA ONE home"
         >
