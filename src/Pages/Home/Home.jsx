@@ -1,4 +1,6 @@
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/navBar/navBar";
+import CTA from "../CTA/CTA";
 import FAQ from "../FAQ/FAQ";
 import Features from "../Features/Features";
 import Health from "../Health/Health";
@@ -16,6 +18,8 @@ function Home(){
         <Health />
         <Reviews />
         <FAQ />
+        <CTA />
+        <Footer />
         </>
     )
 }

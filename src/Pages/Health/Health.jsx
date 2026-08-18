@@ -100,7 +100,7 @@ const graphVariants = {
     opacity: 1,
     transition: {
       pathLength: {
-        duration: 1.8,
+        duration: 3,
         ease: "easeInOut",
       },
       opacity: {

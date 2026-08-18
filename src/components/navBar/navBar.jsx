@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+import { motion } from "motion/react";
+
 import styles from "./navbar.module.css";
 import useResponsiveNavLinks from "../../Hooks/responsiveNavLinks";
 
@@ -9,9 +11,9 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const {navLinks, sideBarLinks, windowWidth} = useResponsiveNavLinks();  
+  const { navLinks, sideBarLinks, windowWidth } = useResponsiveNavLinks();
 
-  const handleNavigation = (href) => {    
+  const handleNavigation = (href) => {
     setIsMenuOpen(false);
 
     const target = document.querySelector(href);
@@ -29,55 +31,121 @@ function Navbar() {
     navigate("/order");
   };
 
+  const navLinksIntroVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const navLinksVarients = {
+    hidden: {
+      x: -20,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOUT",
+      },
+    },
+  };
+
+  const brandVarients = {
+    hidden: {
+      x: -40,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const CtaVarients = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1.2,
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <header className={styles.navbar}>
+    <motion.header
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className={styles.navbar}
+    >
       <div className={styles.container}>
         {/* Brand */}
         <a
-        href="/ROVA-one/"
+          href="/ROVA-one/"
           className={styles.brand}
           aria-label="ROVA ONE home"
         >
-          <span className={styles.brandName}>ROVA</span>
+          <motion.span variants={brandVarients} className={styles.brandName}>
+            ROVA
+          </motion.span>
           <span className={styles.brandModel}>ONE</span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav
+        <motion.nav
+          variants={navLinksIntroVariants}
           className={styles.desktopNav}
           aria-label="Main navigation"
         >
-          <ul className={styles.navList}>
+          <motion.ul className={styles.navList}>
             {navLinks.map(({ label, href }) => (
-              <li key={href}>
-                <button
+              <motion.li variants={navLinksVarients} key={href}>
+                <motion.button
                   type="button"
                   className={styles.navLink}
                   onClick={() => handleNavigation(href)}
                 >
                   {label}
-                </button>
-              </li>
+                </motion.button>
+              </motion.li>
             ))}
-          </ul>
-        </nav>
+          </motion.ul>
+        </motion.nav>
 
         {/* Desktop CTA */}
-        <button
+        <motion.button
+          variants={CtaVarients}
           type="button"
           className={styles.desktopCta}
           onClick={handleBuyNow}
         >
           <span>Buy Now</span>
           <ArrowUpRight size={16} strokeWidth={2} />
-        </button>
+        </motion.button>
 
         {/* Mobile Menu Toggle */}
-        <button
+        <motion.button
+          variants={CtaVarients}
           type="button"
           className={styles.menuToggle}
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
         >
@@ -86,7 +154,7 @@ function Navbar() {
           ) : (
             <Menu size={24} strokeWidth={1.8} />
           )}
-        </button>
+        </motion.button>
       </div>
 
       {/* Mobile Navigation */}
@@ -121,7 +189,7 @@ function Navbar() {
           </button>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }
 

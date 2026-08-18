@@ -6,7 +6,7 @@
   position: relative;
   overflow: hidden;
 
-  padding-block: var(--section-padding-y);
+  /* padding-block: var(--section-padding-y); */
 
   background:
     radial-gradient(
@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
 
-  gap: var(--space-16);
+  /* gap: var(--space-16); */
 }
 
 

@@ -6,8 +6,7 @@
   position: relative;
   overflow: hidden;
 
-  /* padding-block: var(--section-padding-y); */
-  padding: 4rem;
+  padding-block: var(--section-padding-y);
 
   background: var(--color-bg);
 }
