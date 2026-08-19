@@ -604,9 +604,6 @@
     .backLink{
         margin: 1.5rem;
     }
-  .order {
-    padding-block: var(--space-16) var(--space-20);
-  }
 
   .layout {
     grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);

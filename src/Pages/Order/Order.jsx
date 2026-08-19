@@ -173,6 +173,8 @@ function OrderSummary() {
   const shipping = 15;
   const total = productPrice + shipping;
 
+  const navigate = useNavigate();
+
   return (
     <aside className={styles.summary}>
       <div className={styles.summaryHeader}>
@@ -211,7 +213,7 @@ function OrderSummary() {
 
       {/* SUBMIT */}
 
-      <button type="submit" className={styles.submit}>
+      <button type="submit" className={styles.submit} onClick={()=> navigate("/order-success")}>
         <span>Place Order</span>
 
         <span className={styles.submitIcon}>

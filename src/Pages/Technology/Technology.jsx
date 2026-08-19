@@ -55,23 +55,22 @@ const watchVarients = {
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 30,
+      duration: 0.5,
+      ease: "ease"
     },
   },
 };
 
 const headingsVarients = {
   hidden: {
-    y: 40,
+    y: 20,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.8,
       ease: "easeOut",
     },
   },
@@ -94,9 +93,10 @@ function Technology() {
   return (
     <section id="technology" className={styles.technology}>
       <motion.div
+      variants={introVarients}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.35 }}
+        viewport={{ once: true, amount: 0.2 }}
         className={`container ${styles.container}`}
       >
         {/* Section Header */}
@@ -110,7 +110,7 @@ function Technology() {
             <motion.span >Inside and out.</motion.span>
           </motion.h2>
 
-          <motion.p  className={styles.description}>
+          <motion.p variants={headingsVarients} className={styles.description}>
             Precision hardware and intelligent software work together to deliver
             accurate data, reliable performance, and a smarter training
             experience.
