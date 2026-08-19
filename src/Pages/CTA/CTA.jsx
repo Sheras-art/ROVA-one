@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 import styles from "./cta.module.css";
+import { useNavigate } from "react-router-dom";
 
 const contentVariants = {
   hidden: {
@@ -41,6 +42,8 @@ const itemVariants = {
 };
 
 function CTA() {
+  const navigate = useNavigate();
+
   return (
     <section className={styles.cta}>
       {/* Background wordmark */}
@@ -58,34 +61,29 @@ function CTA() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
       >
-        <motion.span
-          className={styles.eyebrow}
-          variants={itemVariants}
-        >
+        <motion.span className={styles.eyebrow} variants={itemVariants}>
           Move with ROVA
         </motion.span>
 
-        <motion.h2
-          className={styles.title}
-          variants={itemVariants}
-        >
+        <motion.h2 className={styles.title} variants={itemVariants}>
           Your world.
           <span>Your data.</span>
           <strong>One watch.</strong>
         </motion.h2>
 
-        <motion.p
-          className={styles.description}
-          variants={itemVariants}
-        >
-          Stay connected to your health, your movement, and the moments
-          that matter most.
+        <motion.p className={styles.description} variants={itemVariants}>
+          Stay connected to your health, your movement, and the moments that
+          matter most.
         </motion.p>
 
         <motion.a
-          href="/ROVA-one/order"
+          href=""
           className={styles.action}
           variants={itemVariants}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/order");
+          }}
         >
           <span>Experience ROVA ONE</span>
 

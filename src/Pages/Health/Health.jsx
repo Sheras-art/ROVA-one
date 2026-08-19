@@ -120,7 +120,7 @@ function Health() {
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.4 }}
         >
           <span className={healthStyle.eyebrow}>Health Intelligence</span>
 
