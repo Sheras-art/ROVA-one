@@ -83,7 +83,7 @@ function CTA() {
         </motion.p>
 
         <motion.a
-          href="#"
+          href="/ROVA-one/order"
           className={styles.action}
           variants={itemVariants}
         >

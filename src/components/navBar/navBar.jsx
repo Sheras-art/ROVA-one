@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,14 +6,15 @@ import { motion } from "motion/react";
 
 import styles from "./navbar.module.css";
 import useResponsiveNavLinks from "../../Hooks/responsiveNavLinks";
+import { object } from "motion/react-client";
 
-function Navbar() {
+function Navbar({activeSection}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const { navLinks, sideBarLinks, windowWidth } = useResponsiveNavLinks();
 
-  const handleNavigation = (href) => {
+  const handleNavigation = (href) => {    
     setIsMenuOpen(false);
 
     const target = document.querySelector(href);
@@ -21,7 +22,7 @@ function Navbar() {
     if (target) {
       target.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
       });
     }
   };
@@ -83,7 +84,7 @@ function Navbar() {
         ease: "easeOut",
       },
     },
-  };
+  };  
 
   return (
     <motion.header
@@ -116,7 +117,7 @@ function Navbar() {
               <motion.li variants={navLinksVarients} key={href}>
                 <motion.button
                   type="button"
-                  className={styles.navLink}
+                  className={`${styles.navLink} ${"#" + activeSection === href.toLocaleLowerCase() ? styles.active : ""}`}
                   onClick={() => handleNavigation(href)}
                 >
                   {label}

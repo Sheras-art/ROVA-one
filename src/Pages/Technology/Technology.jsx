@@ -58,9 +58,21 @@ const watchVarients = {
       type: "spring",
       stiffness: 100,
       damping: 20,
+    },
+  },
+};
 
-      //   duration: 0.5,
-      //   ease: "easeOut",
+const headingsVarients = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 };
@@ -81,30 +93,32 @@ const callOutVarients = {
 function Technology() {
   return (
     <section id="technology" className={styles.technology}>
-      <div className={`container ${styles.container}`}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        className={`container ${styles.container}`}
+      >
         {/* Section Header */}
-        <div className={styles.header}>
-          <span className={styles.eyebrow}>Engineered for performance</span>
+        <motion.div variants={headingsVarients} className={styles.header}>
+          <motion.span variants={headingsVarients} className={styles.eyebrow}>
+            Engineered for performance
+          </motion.span>
 
-          <h2 className={styles.title}>
+          <motion.h2 variants={headingsVarients} className={styles.title}>
             Advanced technology.
-            <span>Inside and out.</span>
-          </h2>
+            <motion.span variants={headingsVarients}>Inside and out.</motion.span>
+          </motion.h2>
 
-          <p className={styles.description}>
+          <motion.p variants={headingsVarients} className={styles.description}>
             Precision hardware and intelligent software work together to deliver
             accurate data, reliable performance, and a smarter training
             experience.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Product Visual */}
-        <motion.div
-          className={styles.product}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.35 }}
-        >
+        <motion.div className={styles.product}>
           <div className={styles.productGlow} />
 
           <motion.img
@@ -115,7 +129,7 @@ function Technology() {
           />
 
           {/* Technology Callouts */}
-          <motion.div className={styles.callouts} >
+          <motion.div className={styles.callouts}>
             {technologies.map(
               ({ id, icon: Icon, label, title, description, position }) => (
                 <motion.article
@@ -141,7 +155,7 @@ function Technology() {
             )}
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

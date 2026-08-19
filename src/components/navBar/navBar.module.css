@@ -127,10 +127,12 @@
   transition: width var(--transition-normal);
 }
 
+.active,
 .navLink:hover {
   color: var(--color-text-primary);
 }
 
+.active::after,
 .navLink:hover::after {
   width: 100%;
 }
