@@ -225,7 +225,7 @@ Future improvements may include connecting the ordering interface to a real back
 
 **Naveed Shera**
 
-Frontend / MERN Stack Developer
+MERN Stack Developer / Full Stack Developer
 
 * GitHub: **[@sheras-art](https://github.com/sheras-art)**
 
