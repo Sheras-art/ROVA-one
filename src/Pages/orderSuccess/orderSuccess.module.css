@@ -225,7 +225,7 @@
     transform var(--transition-fast);
 }
 
-.secondaryAction:hover {
+.secondaryAction:has(span:hover)  {
   transform: translateX(-2px);
 
   color: var(--color-accent);
