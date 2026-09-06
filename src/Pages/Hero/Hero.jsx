@@ -1,7 +1,7 @@
 import { ArrowUpRight, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import { motion, scale } from "motion/react";
+import { motion } from "motion/react";
 
 import styles from "./Hero.module.css";
 
@@ -120,7 +120,10 @@ function Hero() {
           >
             {productHighlights.map(({ value, label }) => (
               <div className={styles.highlight} key={label}>
-                <strong>{value}</strong>
+                <strong>
+                  {label ===  "Sports Modes"? value.slice(0, 3) : value.slice(0, 2)}
+                  <p>{label === "Battery Life" ? value.slice(3, 7) : label === "Water Resistant" ? value.slice(2, 5) : value.slice(3, 4)}</p>
+                </strong>
                 <span>{label}</span>
               </div>
             ))}

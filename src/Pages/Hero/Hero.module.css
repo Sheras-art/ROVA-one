@@ -17,23 +17,22 @@
   width: 100%;
   z-index: -2;
 
-  background: url("../../assets/images/rova-one-hero-img.png")
-    center / cover no-repeat;
+  background: url("../../assets/images/rova-one-hero-img.png") center / cover
+    no-repeat;
 }
 
 .visualOverlay {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--color-bg) 0%,
-      rgba(8, 10, 13, 0.92) 24%,
-      rgba(8, 10, 13, 0.52) 48%,
-      rgba(8, 10, 13, 0.08) 52%,
-      rgba(8, 10, 13, 0) 10%
-    );
+  background: linear-gradient(
+    90deg,
+    var(--color-bg) 0%,
+    rgba(8, 10, 13, 0.92) 24%,
+    rgba(8, 10, 13, 0.52) 48%,
+    rgba(8, 10, 13, 0.08) 52%,
+    rgba(8, 10, 13, 0) 10%
+  );
 }
 
 /* ─────────────────────────────────────────
@@ -53,7 +52,6 @@
 .content {
   width: min(620px, 52%);
   padding-block: 6rem;
-
 }
 
 /* ─────────────────────────────────────────
@@ -167,18 +165,20 @@
 
 .highlights {
   display: flex;
-  width: fit-content;
+  justify-content: space-between;
+  width: 75%;
 
-  margin-top: 3.5rem;
-  padding: 0.3rem;
+  padding: var(--space-3);
+  margin-top: 4rem;
 
   border: 1px solid var(--glow-accent);
   border-radius: var(--radius-lg);
 
-  background: var(--color-glass-strong);
-  box-shadow: 1px 1px 20px -12px var(--color-accent);
+  background: #8e8b8b1b;
+  /* box-shadow: 1px 1px 15px -12px var(--color-accent); */
+  /* box-shadow: var(--glow-accent); */
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(5px);
 }
 
 .highlight {
@@ -205,11 +205,20 @@
 }
 
 .highlight strong {
-  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--color-white);
 
-  font-size: var(--font-size-small);
+  /* font-size: var(--text-body-lg); */
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.05em;
+}
+
+.highlight strong p {
+  color: var(--color-accent);
+  font-size: var(--text-body-lg);
 }
 
 .highlight span {
@@ -234,7 +243,7 @@
     background-position: 62% center;
   }
 
-  .highlights{
+  .highlights {
     margin-top: 5rem;
   }
 
